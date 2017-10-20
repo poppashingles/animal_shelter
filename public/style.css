@@ -1,0 +1,29 @@
+img {
+  width: auto;
+  height: 200px;
+  margin: auto;
+  display: block;
+}
+
+.container {
+  border: solid 1px black;
+  margin: 0 1% 2% 1%;
+  padding: 0 1% 2% 0;
+  display: inline-block;
+  width: 28%;
+  background-color: lightsteelblue;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container p {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Trebuchet MS";
+}
+
+.container img {
+  border: solid 3px black;
+}

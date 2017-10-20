@@ -1,7 +1,11 @@
-<% @owners.each do |owner| %>
-  <p><%= owner.first_name %></p>
-  <p><%= owner.last_name %></p>
-  <p><%= owner.address %></p>
-  <p><%= owner.email %></p>
-  <img src = "<%= owner.photo_url %>"/>
-<% end %>
+<li>
+  <% @owners.each do |owner| %>
+    <div class= "container">
+      <p>First name: <%= owner.first_name %></p>
+      <p>Last name: <%= owner.last_name %></p>
+      <p>Address: <%= owner.address %></p>
+      <p>Email: <%= owner.email %></p>
+      <img src = "<%= owner.photo_url %>"/>
+  </div>
+  <% end %>
+</li>
