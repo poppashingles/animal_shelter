@@ -12,13 +12,13 @@ class Owner
     @address = params['address']
     @email = params['email']
     @photo_url = params['photo_url']
-    @phone = params['phone'].to_i()
+    @phone_number = params['phone'].to_i()
   end
 
   def save()
-    sql = "INSERT INTO owners (first_name, last_name, address, email, photo_url, phone)
+    sql = "INSERT INTO owners (first_name, last_name, address, email, photo_url, phone_number)
           VALUES ($1, $2, $3, $4, $5, $6) RETURNING *"
-    values = [@first_name, @last_name, @address, @email, @photo_url, @phone]
+    values = [@first_name, @last_name, @address, @email, @photo_url, @phone_number]
     owner_data = SqlRunner.run(sql, values)[0]
     @id = owner_data['id'].to_i()
   end
