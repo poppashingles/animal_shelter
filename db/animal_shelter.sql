@@ -8,7 +8,7 @@ CREATE TABLE owners (
   address VARCHAR(255),
   email VARCHAR(255),
   photo_url VARCHAR(255),
-  phone_number INT4
+  phone_number VARCHAR(255)
 );
 
 CREATE TABLE animals (

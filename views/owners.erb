@@ -1,0 +1,7 @@
+<% @owners.each do |owner| %>
+  <p><%= owner.first_name %></p>
+  <p><%= owner.last_name %></p>
+  <p><%= owner.address %></p>
+  <p><%= owner.email %></p>
+  <img src = "<%= owner.photo_url %>"/>
+<% end %>
