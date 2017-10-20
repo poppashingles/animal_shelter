@@ -3,7 +3,7 @@ require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/owner.rb')
 
-get '/owners' do
+get '/owners/index' do
   @owners = Owner.all()
-  erb(:owners)
+  erb(:"owners/index")
 end

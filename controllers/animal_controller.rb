@@ -3,12 +3,12 @@ require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/animal.rb')
 
-get '/animals' do
+get '/animals/index' do
   @animals = Animal.all()
-  erb(:animals)
+  erb(:"animals/index")
 end
 
-get '/animals/:id' do
-  @animal = Animal.find(id)
-  erb(:"animals/show")
-end
+# get '/animals/:id' do
+#   @animal = Animal.find(params[:id])
+#   erb(:"animals/show")
+# end
