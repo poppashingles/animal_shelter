@@ -7,3 +7,8 @@ get '/animals' do
   @animals = Animal.all()
   erb(:animals)
 end
+
+get '/animals/:id' do
+  @animal = Animal.find(id)
+  erb(:"animals/show")
+end
