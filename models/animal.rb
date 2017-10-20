@@ -31,4 +31,30 @@ class Animal
     return results.map { |animal| Animal.new(animal)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM animals
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)[0]
+    return Animal.new(results)
+  end
+
+  def update()
+    sql = "UPDATE animals
+    SET
+    (
+      name,
+      type,
+      adoptable,
+      admission_date,
+      photo_url
+    ) =
+    (
+      $1, $2, $3, $4, $5
+    )
+    WHERE id = $6"
+    values = [@name, @type, @adoptable, @admission_date, @photo_url, @id]
+    SqlRunner.run( sql, values )
+  end
+
 end

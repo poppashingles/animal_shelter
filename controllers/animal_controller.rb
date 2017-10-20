@@ -8,7 +8,17 @@ get '/animals/index' do
   erb(:"animals/index")
 end
 
-# get '/animals/:id' do
-#   @animal = Animal.find(params[:id])
-#   erb(:"animals/show")
-# end
+get '/animals/:id' do
+  @animal = Animal.find(params[:id])
+  erb(:"animals/show")
+end
+
+get '/animals/:id/edit' do
+  @animal = Animal.find(params[:id])
+  erb(:"animals/edit")
+end
+
+post '/animals/:id' do
+  Animal.new(params).update()
+  redirect to '/animals'
+end
