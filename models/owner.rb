@@ -23,4 +23,11 @@ class Owner
     @id = owner_data['id'].to_i()
   end
 
+  def self.all()
+    sql = "SELECT * FROM owners"
+    values = []
+    results = SqlRunner.run(sql, values)
+    return results.map { |owner| Owner.new(owner)}
+  end
+
 end
