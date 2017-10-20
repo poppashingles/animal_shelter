@@ -12,7 +12,7 @@ class Owner
     @address = params['address']
     @email = params['email']
     @photo_url = params['photo_url']
-    @phone = params['phone'].to_int()
+    @phone = params['phone'].to_i()
   end
 
 end
