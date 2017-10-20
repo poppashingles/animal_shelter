@@ -7,6 +7,7 @@ CREATE TABLE owners (
   last_name VARCHAR(255),
   address VARCHAR(255),
   email VARCHAR(255),
+  photo_url VARCHAR(255),
   phone_number INT4
 );
 
@@ -17,5 +18,6 @@ CREATE TABLE animals (
   adoptable BOOLEAN,
   admission_date DATE,
   adopted_date DATE,
+  photo_url VARCHAR(255),
   owner_id INT4 REFERENCES owners(id)
 );
