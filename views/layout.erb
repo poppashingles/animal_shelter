@@ -4,13 +4,19 @@
     <meta charset="utf-8">
     <title>Animal Shelter</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" href="https://d30y9cdsu7xlg0.cloudfront.net/png/61386-200.png" />
   </head>
   <body>
     <nav class="navbar">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/owners/index">Owners</a></li>
-        <li><a href="/animals/index">Animals</a></li>
+        <li><a href="/owners/index">All owners</a></li>
+        <li><a href="/animals/index">All animals</a></li>
+        <% if session[:id] == nil %>
+          <li><a href="/sessions/login">Log in</a></li>
+        <% else %>
+          <li>Currently logged in as <%= session[:name] %></li>
+          <li><a href="/sessions/logout">Log out</a></li>
+        <% end %>
       </ul>
     </nav>
     <div class = container-main>

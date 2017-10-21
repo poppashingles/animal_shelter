@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS owners;
 
@@ -20,4 +21,10 @@ CREATE TABLE animals (
   -- adopted_date DATE,
   photo_url VARCHAR(255),
   owner_id INT4 REFERENCES owners(id)
+);
+
+CREATE TABLE users (
+  id SERIAL4 primary key,
+  name VARCHAR(255),
+  password VARCHAR(255)
 );

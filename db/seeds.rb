@@ -1,5 +1,6 @@
 require_relative('../models/animal.rb')
 require_relative('../models/owner.rb')
+require_relative('../models/user.rb')
 require('pry-byebug')
 
 
@@ -57,6 +58,21 @@ animal2 = Animal.new({
   "owner_id" => owner1.id
 })
 animal2.save()
+
+
+# User seeds
+user1 = User.new({
+  "name" => "volunteer",
+  "password" => "animals are the shiznit"
+  })
+user1.save()
+
+user2 = User.new({
+  "name" => "administrator",
+  "password" => "humpty dumpty"
+  })
+user2.save()
+
 
 binding.pry
 nil
