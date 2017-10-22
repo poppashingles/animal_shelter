@@ -5,8 +5,13 @@ require_relative('controllers/animal_controller.rb')
 require_relative('controllers/owner_controller.rb')
 require_relative('controllers/users_controller.rb')
 
+# before '/*' do
+#   unless request.path_info == '/sessions/login'
+#     redirect to('/sessions/login')
+#   end
+# end
+
 get '/' do
   @animals = Animal.all()
-  # @user = User.find_by_id(params[:session_id])
   erb(:"animals/index")
 end

@@ -18,6 +18,11 @@ li {
   list-style-type: none;
 }
 
+.logo {
+  width: 200px;
+  height: auto;
+}
+
 .container p {
   text-align: center;
   font-size: 16px;
@@ -26,4 +31,29 @@ li {
 
 .container img {
   border: solid 3px black;
+}
+
+.navbar ul li {
+  float: left;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.navbar {
+  display: inline-block;
+}
+
+a:link    {
+  text-decoration:  none;
+  font-weight:      bold;
+  }
+
+a:visited {
+  text-decoration: none;
+  font-weight: bold;
+  }
+
+.nav-link {
+  background-color: lightsteelblue;
 }

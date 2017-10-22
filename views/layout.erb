@@ -9,13 +9,14 @@
   <body>
     <nav class="navbar">
       <ul>
-        <li><a href="/owners/index">All owners</a></li>
-        <li><a href="/animals/index">All animals</a></li>
+        <li><img class="logo" src="https://groundsandhoundscoffee.com/wp-content/uploads/2014/03/pet-refuge-logo.png"></li>
+        <li class="nav-link"><a href="/owners/index">All owners</a></li>
+        <li class="nav-link"><a href="/animals/index">All animals</a></li>
         <% if session[:id] == nil %>
-          <li><a href="/sessions/login">Log in</a></li>
+          <li class="nav-link"><a href="/sessions/login">Log in</a></li>
         <% else %>
-          <li><a href="/sessions/logout">Log out</a></li>
-          <li><a href="/animals/new">Add new animal</a></li>
+          <li class="nav-link"><a href="/animals/new">Add new animal</a></li>
+          <li class="nav-link"><a href="/sessions/logout">Log out</a></li>
           <li>Currently logged in as <%= session[:name] %></li>
         <% end %>
       </ul>
