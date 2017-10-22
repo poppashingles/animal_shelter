@@ -1,13 +1,18 @@
 <div class= "container">
-    <p>Name: <%= @animal.name %></p>
-    <p>Type: <%= @animal.type %></p>
-    <p>Adoptable:
-      <% if @animal.adoptable == "t" %>
-        <%= "Yes" %>
-      <% else %>
-        <%= "No" %>
-      <% end %>
-    </p>
-    <p>Admission date: <%= @animal.admission_date %></p>
-    <img src = "<%= @animal.photo_url %>"/>
+  <p>Name: <%= @animal.name %></p>
+  <p>Type: <%= @animal.type %></p>
+  <p>Adoptable:
+    <% if @animal.adoptable == "t" %>
+      <%= "Yes" %>
+    <% else %>
+      <%= "No" %>
+    <% end %>
+  </p>
+  <p>Admission date: <%= @animal.admission_date %></p>
+  <img src = "<%= @animal.photo_url %>"/>
+  <% if session[:name] == "administrator" %>
+    <!-- Button to toggle adoptable -->
+    <p><a href="/animals/<%= @animal.id %>/edit">Edit all details</a></p>
+    <!-- Link to delete animal, with confirmation box -->
+  <% end %>
 </div>

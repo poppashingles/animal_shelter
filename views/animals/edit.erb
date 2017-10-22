@@ -5,14 +5,17 @@
   <label for="type-field">Type:</label>
   <input type="text" name="type" id="type-field" value="<%= @animal.type %>"/>
 
-  <label for="pizza-selection">Available for adoption:</label>
+  <label for="adoptable-selection">Available for adoption:</label>
   <select name="adoptable" id="adoptable-selection">
     <option value="Yes" <%= "selected" if @animal.adoptable == "t" %>>Yes</option>
     <option value="No" <%= "selected" if @animal.adoptable == "f" %>>No</option>
   </select>
 
   <label for="admission-date-field">Admission date:</label>
-  <input type="number" name="admission_date" id="admission-date-field" value="<%= @animal.admission_date() %>"/>
+  <input type="date" name="admission_date" id="admission-date-field" value="<%= @animal.admission_date() %>"/>
+
+  <label for="photo-url-field">Photo link:</label>
+  <input type="text" name="photo_url" id="photo-url-field" value="<%= @animal.photo_url %>"/>
 
   <input type='submit' value="Edit animal">
 </form>
