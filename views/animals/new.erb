@@ -20,11 +20,12 @@
   <input type="text" name="photo_url" id="photo-field"/>
 
   <label for="owner-field">Owner:</label>
-  <input type="text" name="owner_id" id="owner-field"/>
-  <!-- <select name="owner" id="owner-field">
-    <option value="Yes"></option>
-    <option value="No"></option>
-  </select> -->
+  <select name="owner" id="owner-field">
+    <% @owners.each do |owner| %>
+      <option value=""><%= owner.first_name %> <%= owner.last_name %></option>
+    <% end %>
+  </select>
+
 
   <input type="submit" value="Add new animal to list">
 </form>

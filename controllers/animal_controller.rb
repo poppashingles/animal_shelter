@@ -9,6 +9,7 @@ get '/animals/index' do
 end
 
 get '/animals/new' do
+  @owners = Owner.all()
   erb(:"animals/new")
 end
 
@@ -25,6 +26,7 @@ end
 
 get '/animals/:id/edit' do
   @animal = Animal.find(params[:id])
+  @owners = Owner.all()
   erb(:"animals/edit")
 end
 

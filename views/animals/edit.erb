@@ -17,8 +17,12 @@
   <label for="photo-url-field">Photo link:</label>
   <input type="text" name="photo_url" id="photo-url-field" value="<%= @animal.photo_url %>"/>
 
-  <label for="owner-id-field">Owner:</label>
-  <input type="text" name="owner_id" id="owner-id-field" value="<%= @animal.owner_id %>"/>
+  <label for="owner-field">Owner:</label>
+  <select name="owner" id="owner-field">
+    <% @owners.each do |owner| %>
+      <option value="" <%= "selected" if @animal.owner_id == owner.id %>><%= owner.first_name %> <%= owner.last_name %></option>
+    <% end %>
+  </select>
 
   <input type='submit' value="Edit animal">
 </form>

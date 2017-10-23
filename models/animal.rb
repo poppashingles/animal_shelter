@@ -1,3 +1,4 @@
+require_relative('owner.rb')
 require_relative('../db/sql_runner')
 
 class Animal
@@ -52,6 +53,14 @@ class Animal
     WHERE id = $1"
     values = [@id]
     SqlRunner.run( sql, values )
+  end
+
+  def owner()
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [@owner_id]
+    owner = SqlRunner.run(sql, values)[0]
+    result = Owner.new(owner)
+    return result
   end
 
 end
