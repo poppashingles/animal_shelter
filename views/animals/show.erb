@@ -16,7 +16,7 @@
     <!-- <form action="" method="post">
       <input type='submit' value="Adoptable?">
     </form> -->
-    <form action="/animals/<%= @animal.id %>/edit" method="post">
+    <form action="/animals/<%= @animal.id %>/edit" method="get">
       <input id ="edit-button" type='submit' value="Edit animal's details">
     </form>
     <form action="/animals/<%= @animal.id %>/delete" method="post">
