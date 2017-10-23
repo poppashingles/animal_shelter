@@ -32,3 +32,9 @@ get '/owners/:id' do
   @owner = Owner.find(params[:id])
   erb(:"owners/show")
 end
+
+post '/owners/:id/delete' do
+  owner = Owner.find(params[:id])
+  owner.delete()
+  redirect to '/owners/index'
+end

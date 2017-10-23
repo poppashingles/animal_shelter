@@ -8,8 +8,7 @@ require_relative('controllers/users_controller.rb')
 enable :sessions
 
 before '/*' do
-  if session[:name] == nil && request.path_info != '/sessions/login'
-     && request.path_info != '/sessions'
+  if session[:name] == nil && request.path_info != '/sessions/login' && request.path_info != '/sessions'
     redirect to('/sessions/login')
   end
 end

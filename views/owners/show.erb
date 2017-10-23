@@ -8,5 +8,8 @@
       <form action="/owners/<%= @owner.id %>/edit" method="get">
         <input id ="edit-button" type='submit' value="Edit owner's details">
       </form>
+      <form action="/owners/<%= @owner.id %>/delete" method="post">
+        <input id ="delete-button" type='submit' value="Remove owner from the database">
+      </form>
     <% end %>
 </div>
