@@ -16,6 +16,7 @@
           <a href="/sessions/login"><li class="nav-link">Log in</li></a>
         <% else %>
           <a href="/animals/new"><li class="nav-link">Add new animal</li></a>
+          <a href="/owners/new"><li class="nav-link">Add new owner</li></a>
           <a href="/sessions/logout"><li class="nav-link">Log out</li></a>
           <li>Currently logged in as <%= session[:name] %></li>
         <% end %>
