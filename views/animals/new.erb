@@ -6,7 +6,12 @@
   <input type="text" name="type" id="type-field"/>
 
   <label for="adoptable-field">Adoptable:</label>
-  <input type="boolean" name="adoptable" id="adoptable-field"/>
+  <!-- <input type="boolean" name="adoptable" id="adoptable-field"/> -->
+
+  <select name="adoptable" id="adoptable-field">
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
 
   <label for="admission-date-field">Admission date:</label>
   <input type="date" name="admission_date" id="admission-date-field"/>
@@ -16,6 +21,10 @@
 
   <label for="owner-field">Owner:</label>
   <input type="text" name="owner_id" id="owner-field"/>
+  <!-- <select name="owner" id="owner-field">
+    <option value="Yes"></option>
+    <option value="No"></option>
+  </select> -->
 
   <input type="submit" value="Add new animal to list">
 </form>

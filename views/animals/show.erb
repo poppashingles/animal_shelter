@@ -11,13 +11,16 @@
   <p>Admission date: <%= @animal.admission_date %></p>
   <img src = "<%= @animal.photo_url %>"/>
   <% if session[:name] == "administrator" %>
-    <p><a href="/animals/<%= @animal.id %>/edit">Edit all details</a></p>
+    <!-- <p><a href="/animals/<%= @animal.id %>/edit">Edit all details</a></p> -->
     <!-- Button to toggle adoptable -->
     <!-- <form action="" method="post">
       <input type='submit' value="Adoptable?">
     </form> -->
+    <form action="/animals/<%= @animal.id %>/edit" method="post">
+      <input id ="edit-button" type='submit' value="Edit animal's details">
+    </form>
     <form action="/animals/<%= @animal.id %>/delete" method="post">
-      <input type='submit' value="Remove animal from the database">
+      <input id ="delete-button" type='submit' value="Remove animal from the database">
     </form>
   <% end %>
 </div>
