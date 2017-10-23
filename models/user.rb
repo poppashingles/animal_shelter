@@ -19,12 +19,17 @@ class User
     @id = user_data['id'].to_i()
   end
 
-  def self.find(name, password)
+  def self.authenticate(name, password)
     sql = "SELECT * FROM users
           WHERE name = $1 and password = $2"
     values = [name, password]
-    result = SqlRunner.run(sql, values)[0]
-    return User.new(result)
+    result = SqlRunner.run(sql, values)
+
+    if(result.first != nil)
+      return true
+    end
+
+    return false
   end
 
   def self.find_by_id(id)

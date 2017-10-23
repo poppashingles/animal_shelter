@@ -12,7 +12,7 @@
         <a href="/animals/index"><li><img class="logo" src="https://groundsandhoundscoffee.com/wp-content/uploads/2014/03/pet-refuge-logo.png"></li></a>
         <a href="/owners/index"><li class="nav-link">All owners</li></a>
         <a href="/animals/index"><li class="nav-link">All animals</li></a>
-        <% if session[:id] == nil %>
+        <% if session[:name] == nil %>
           <a href="/sessions/login"><li class="nav-link">Log in</li></a>
         <% else %>
           <a href="/animals/new"><li class="nav-link">Add new animal</li></a>

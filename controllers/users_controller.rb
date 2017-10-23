@@ -13,8 +13,12 @@ get '/sessions/logout' do
 end
 
 post '/sessions' do
-  @user = User.find(params["name"], params["password"])
-  session[:id] = @user.id
-  session[:name] = @user.name
-  redirect to('/animals/index')
+  @is_logged_in = User.authenticate(params["name"], params["password"])
+
+  if(@is_logged_in)
+    session[:name] = params["name"]
+    redirect to('/animals/index')
+  else
+    redirect to('/sessions/login')
+  end
 end
