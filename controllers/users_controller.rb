@@ -3,8 +3,6 @@ require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/user.rb')
 
-enable :sessions
-
 get '/sessions/login' do
   erb(:"users/index")
 end

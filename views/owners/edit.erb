@@ -1,0 +1,21 @@
+<form method="post" action="/owners/<%= @owner.id %>">
+  <label for="first-name-field">First name:</label>
+  <input type="text" name="first_name" id="first-name-field" value="<%= @owner.first_name %>"/>
+
+  <label for="last-name-field">Last name:</label>
+  <input type="text" name="last_name" id="last-name-field" value = "<%= @owner.last_name %>"/>
+
+  <label for="address-field">Address:</label>
+  <input type="text" name="address" id="address-field" value = "<%= @owner.address %>"/>
+
+  <label for="email-field">Email:</label>
+  <input type="text" name="email" id="email-field" value = "<%= @owner.email %>"/>
+
+  <label for="photo-url-field">Photo:</label>
+  <input type="text" name="photo_url" id="photo-url-field" value = "<%= @owner.photo_url %>"/>
+
+  <label for="phone-number-field">Phone:</label>
+  <input type="text" name="phone_number" id="phone-number-field" value = "<%= @owner.phone_number %>"/>
+
+  <input type="submit" value="Update owner's details">
+</form>

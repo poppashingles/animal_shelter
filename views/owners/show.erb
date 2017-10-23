@@ -4,4 +4,9 @@
     <p>Address: <%= @owner.address %></p>
     <p>Email: <%= @owner.email %></p>
     <img src = "<%= @owner.photo_url %>"/>
+    <% if session[:name] == "administrator" %>
+      <form action="/owners/<%= @owner.id %>/edit" method="get">
+        <input id ="edit-button" type='submit' value="Edit owner's details">
+      </form>
+    <% end %>
 </div>

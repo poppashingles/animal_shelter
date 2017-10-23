@@ -3,7 +3,7 @@ require_relative('../db/sql_runner.rb')
 class Owner
 
   attr_reader :id
-  attr_accessor :first_name, :last_name, :address, :email, :photo_url, :phone
+  attr_accessor :first_name, :last_name, :address, :email, :photo_url, :phone_number
 
   def initialize(params)
     @id = params['id'].to_i()

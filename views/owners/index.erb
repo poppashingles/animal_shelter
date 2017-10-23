@@ -5,7 +5,7 @@
       <p>Last name: <%= owner.last_name %></p>
       <p>Address: <%= owner.address %></p>
       <p>Email: <%= owner.email %></p>
-      <img src = "<%= owner.photo_url %>"/>
+      <p><a href="/owners/<%= owner.id %>"><img src = "<%= owner.photo_url %>"/></a></p>
   </div>
   <% end %>
 </li>
