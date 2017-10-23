@@ -42,7 +42,7 @@ class Owner
     sql = "UPDATE owners
     SET (first_name, last_name, address, email, photo_url, phone_number) =
     ($1, $2, $3, $4, $5, $6) WHERE id = $7"
-    values = [@first_name, @last_name, @address, @email, @photo_url, @phone_number]
+    values = [@first_name, @last_name, @address, @email, @photo_url, @phone_number, @id]
     SqlRunner.run( sql, values )
   end
 
