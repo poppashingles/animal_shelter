@@ -13,6 +13,12 @@ get '/animals/new' do
   erb(:"animals/new")
 end
 
+get '/search' do
+  search_value = params['search_input']
+  @animals = Animal.find_by_name(search_value)
+  erb(:"animals/results")
+end
+
 post '/animals' do
   @animal = Animal.new(params)
   @animal.save()

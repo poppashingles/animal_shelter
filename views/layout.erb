@@ -30,10 +30,12 @@
           <a href="/owners/new"><li class="nav-link">Add new owner</li></a>
           <a href="/sessions/logout"><li class="nav-link">Log out</li></a>
           <li>Currently logged in as <%= session[:name] %></li>
-          <!-- <form method = "get" action = "/search">
+
+          <form method = "get" action = "/search">
             <input type="text" name="search_input"/>
-            <input type="submit" value="Search">
-          </form> -->
+            <input type="submit" value="Search by animal name or type">
+          </form>
+
         <% end %>
       </ul>
     </nav>

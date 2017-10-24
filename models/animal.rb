@@ -76,4 +76,12 @@ class Animal
     results = SqlRunner.run(sql, values)
     return results.map { |animal| Animal.new(animal)}
   end
+
+  def self.find_by_name(search)
+    sql = "SELECT * FROM animals WHERE name LIKE $1 OR type LIKE $1"
+    values = [search.capitalize]
+    results = SqlRunner.run(sql, values)
+    return results.map { |animal| Animal.new(animal)}
+  end
+
 end
