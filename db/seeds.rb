@@ -69,7 +69,7 @@ user1.save()
 
 user2 = User.new({
   "name" => "administrator",
-  "password" => "humpty dumpty"
+  "password" => "a"
   })
 user2.save()
 

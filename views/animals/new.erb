@@ -20,9 +20,9 @@
   <input type="text" name="photo_url" id="photo-field"/>
 
   <label for="owner-field">Owner:</label>
-  <select name="owner" id="owner-field">
+  <select name="owner_id" id="owner-field">
     <% @owners.each do |owner| %>
-      <option value=""><%= owner.first_name %> <%= owner.last_name %></option>
+      <option value="<%= owner.id %>"><%= owner.first_name %> <%= owner.last_name %></option>
     <% end %>
   </select>
 

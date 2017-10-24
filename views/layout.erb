@@ -11,14 +11,29 @@
       <ul>
         <a href="/animals/index"><li><img class="logo" src="https://groundsandhoundscoffee.com/wp-content/uploads/2014/03/pet-refuge-logo.png"></li></a>
         <a href="/owners/index"><li class="nav-link">All owners</li></a>
-        <a href="/animals/index"><li class="nav-link">All animals</li></a>
         <% if session[:name] == nil %>
           <a href="/sessions/login"><li class="nav-link">Log in</li></a>
         <% else %>
+
+          <div class="dropdown">
+            <button class="dropbtn">Animals
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/animals/index"><li class="nav-link">All animals</li></a>
+              <a href="#">Ready for adoption</a>
+              <a href="#">Not ready yet</a>
+            </div>
+          </div>
+
           <a href="/animals/new"><li class="nav-link">Add new animal</li></a>
           <a href="/owners/new"><li class="nav-link">Add new owner</li></a>
           <a href="/sessions/logout"><li class="nav-link">Log out</li></a>
           <li>Currently logged in as <%= session[:name] %></li>
+          <!-- <form method = "get" action = "/search">
+            <input type="text" name="search_input"/>
+            <input type="submit" value="Search">
+          </form> -->
         <% end %>
       </ul>
     </nav>

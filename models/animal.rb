@@ -42,9 +42,9 @@ class Animal
 
   def update()
     sql = "UPDATE animals
-    SET (name, type, adoptable, admission_date, photo_url) =
-    ($1, $2, $3, $4, $5) WHERE id = $6"
-    values = [@name, @type, @adoptable, @admission_date, @photo_url, @id]
+    SET (name, type, adoptable, admission_date, photo_url, owner_id) =
+    ($1, $2, $3, $4, $5, $6) WHERE id = $7"
+    values = [@name, @type, @adoptable, @admission_date, @photo_url, @owner_id, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -61,6 +61,13 @@ class Animal
     owner = SqlRunner.run(sql, values)[0]
     result = Owner.new(owner)
     return result
+  end
+
+  def self.find_by_owner(owner_id)
+    sql = "SELECT * FROM animals WHERE owner_id = $1"
+    values = [owner_id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |animal| Animal.new(animal)}
   end
 
 end
