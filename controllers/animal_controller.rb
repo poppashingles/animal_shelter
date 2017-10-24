@@ -19,6 +19,16 @@ post '/animals' do
   erb(:"animals/create")
 end
 
+get '/animals/adoptable' do
+  @animals = Animal.adoptable(true)
+  erb(:"animals/adoptable")
+end
+
+get '/animals/unadoptable' do
+  @animals = Animal.adoptable(false)
+  erb(:"animals/unadoptable")
+end
+
 get '/animals/:id' do
   @animal = Animal.find(params[:id])
   erb(:"animals/show")

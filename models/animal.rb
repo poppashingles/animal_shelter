@@ -70,4 +70,10 @@ class Animal
     return result.map { |animal| Animal.new(animal)}
   end
 
+  def self.adoptable(adoptable)
+    sql = "SELECT * FROM animals WHERE adoptable = $1"
+    values = [adoptable]
+    results = SqlRunner.run(sql, values)
+    return results.map { |animal| Animal.new(animal)}
+  end
 end

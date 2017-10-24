@@ -1,0 +1,8 @@
+<% @animals.each do |animal| %>
+  <div class= "container">
+    <p>Name: <%= animal.name %></p>
+    <p>Type: <%= animal.type %></p>
+    <p>Admission date: <%= animal.admission_date %></p>
+    <p><a href="/animals/<%= animal.id %>"><img src = "<%= animal.photo_url %>"/></a></p>
+</div>
+<% end %>
