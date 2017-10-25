@@ -53,4 +53,12 @@ class Owner
     SqlRunner.run( sql, values )
   end
 
+  def self.find_by_name(search)
+    sql = "SELECT * FROM owners WHERE
+    first_name = $1 OR last_name = $1 OR address = $1 OR email = $1 OR phone_number = $1"
+    values = [search.capitalize]
+    results = SqlRunner.run(sql, values)
+    return results.map { |owner| Owner.new(owner)}
+  end
+
 end

@@ -4,6 +4,7 @@ require('pry-byebug')
 require_relative('controllers/animal_controller.rb')
 require_relative('controllers/owner_controller.rb')
 require_relative('controllers/users_controller.rb')
+require_relative('controllers/search_controller.rb')
 
 enable :sessions
 
