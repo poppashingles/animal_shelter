@@ -31,9 +31,9 @@
           <a href="/sessions/logout"><li class="nav-link">Log out</li></a>
           <li>Currently logged in as <%= session[:name] %></li>
 
-          <form method = "get" action = "/search">
-            <input type="text" name="search_input"/>
-            <input type="submit" value="Search by animal name or type">
+          <form class="submit" method = "get" action = "/search">
+            <input type="text" name="search_input" placeholder="Search by animal name or type"/>
+            <input type="submit" value="Search">
           </form>
 
         <% end %>
