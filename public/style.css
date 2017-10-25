@@ -1,3 +1,7 @@
+body {
+  font-family: "Trebuchet MS";
+}
+
 img {
   width: auto;
   height: 200px;
@@ -26,7 +30,6 @@ li {
 .container p {
   text-align: center;
   font-size: 16px;
-  font-family: "Trebuchet MS";
 }
 
 .container img {
@@ -109,7 +112,6 @@ input[type=submit]:hover {
 
 .navbar {
     overflow: hidden;
-    font-family: Arial;
 }
 
 .navbar a {

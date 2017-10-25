@@ -12,8 +12,11 @@
         <input id ="delete-button" type='submit' value="Remove owner from the database">
       </form>
     <% end %>
-</div>
+</div><br>
 
+<% if @animals.count > 0 %>
+  <h1><%= @owner.first_name %>'s animals</h1>
+<% end %>
 <% @animals.each do |animal| %>
   <div class= "container">
     <p>Name: <%= animal.name %></p>
