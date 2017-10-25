@@ -1,31 +1,41 @@
-<ul>
-  <li>
-    <% @animals.each do |animal| %>
-    <div class= "container">
-      <p>Name: <%= animal.name %></p>
-      <p>Type: <%= animal.type %></p>
-      <p>Adoptable:
-        <% if animal.adoptable == "t" %>
-          <%= "Yes" %>
-        <% else %>
-          <%= "No" %>
-        <% end %>
-      </p>
-      <p>Admission date: <%= animal.admission_date %></p>
-      <p><a href="/animals/<%= animal.id %>"><img src = "<%= animal.photo_url %>"/></a></p>
-    </div>
-    <% end %>
-  </li>
-
-  <li>
-    <% @owners.each do |owner| %>
+<% if @animals.count == 0 && @owners.count == 0 %>
+  <p>No results found</p>
+<% else %>
+  <ul>
+    <li>
+      <% if @animals.count > 0 %>
+        <h1>Animals</h1>
+      <% end %>
+      <% @animals.each do |animal| %>
       <div class= "container">
-        <p>First name: <%= owner.first_name %></p>
-        <p>Last name: <%= owner.last_name %></p>
-        <p>Address: <%= owner.address %></p>
-        <p>Email: <%= owner.email %></p>
-        <p><a href="/owners/<%= owner.id %>"><img src = "<%= owner.photo_url %>"/></a></p>
-    </div>
-    <% end %>
-  </li>
-</ul>
+        <p>Name: <%= animal.name %></p>
+        <p>Type: <%= animal.type %></p>
+        <p>Adoptable:
+          <% if animal.adoptable == "t" %>
+            <%= "Yes" %>
+          <% else %>
+            <%= "No" %>
+          <% end %>
+        </p>
+        <p>Admission date: <%= animal.admission_date %></p>
+        <p><a href="/animals/<%= animal.id %>"><img src = "<%= animal.photo_url %>"/></a></p>
+      </div>
+      <% end %>
+    </li>
+
+    <li>
+      <% if @owners.count > 0 %>
+        <h1>Owners</h1>
+      <% end %>
+      <% @owners.each do |owner| %>
+        <div class= "container">
+          <p>First name: <%= owner.first_name %></p>
+          <p>Last name: <%= owner.last_name %></p>
+          <p>Address: <%= owner.address %></p>
+          <p>Email: <%= owner.email %></p>
+          <p><a href="/owners/<%= owner.id %>"><img src = "<%= owner.photo_url %>"/></a></p>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
