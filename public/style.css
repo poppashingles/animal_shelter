@@ -162,3 +162,9 @@ input[type=submit]:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+#success-create {
+  border: 3px solid green;
+  border-radius: 10px;
+  margin: 20px;
+}

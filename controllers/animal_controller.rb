@@ -5,6 +5,8 @@ require_relative('../models/animal.rb')
 
 get '/animals/index' do
   @animals = Animal.all()
+  @success_message = session[:success_message]
+  session[:success_message] = nil
   erb(:"animals/index")
 end
 
@@ -16,7 +18,8 @@ end
 post '/animals' do
   @animal = Animal.new(params)
   @animal.save()
-  erb(:"animals/create")
+  session[:success_message] = "---Successfully added new animal to the database---"
+  redirect to '/animals/index'
 end
 
 get '/animals/adoptable' do
@@ -42,11 +45,13 @@ end
 
 post '/animals/:id' do
   Animal.new(params).update()
+  session[:success_message] = "---Successfully updated animal in the database---"
   redirect to '/animals/index'
 end
 
 post '/animals/:id/delete' do
   animal = Animal.find(params[:id])
   animal.delete()
+  session[:success_message] = "---Successfully deleted animal from the database---"
   redirect to '/animals/index'
 end

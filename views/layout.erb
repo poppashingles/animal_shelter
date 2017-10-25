@@ -39,6 +39,11 @@
         <% end %>
       </ul>
     </nav>
+    <% if @success_message %>
+      <div id="success-create">
+        <%= @success_message %>
+      </div>
+    <% end %>
     <div class = container-main>
     <%= yield %>
     </div>
