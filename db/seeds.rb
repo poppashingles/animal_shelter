@@ -1,7 +1,6 @@
 require_relative('../models/animal.rb')
 require_relative('../models/owner.rb')
 require_relative('../models/user.rb')
-require('pry-byebug')
 
 
 # Owner seeds

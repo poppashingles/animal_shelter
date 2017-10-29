@@ -1,6 +1,5 @@
 require('sinatra')
-require('sinatra/contrib/all')
-require('pry-byebug')
+require('sinatra/contrib/all') if development?
 require_relative('../models/user.rb')
 require_relative('../models/animal.rb')
 require_relative('../models/owner.rb')
