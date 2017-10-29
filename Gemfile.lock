@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    actionmailer (0.6.1)
+      actionpack (>= 0.9.5)
+    actionpack (1.4.0)
     activemodel (5.1.4)
       activesupport (= 5.1.4)
     activerecord (5.1.4)
@@ -57,6 +60,11 @@ GEM
       rack
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
+    rails (0.9.5)
+      actionmailer (>= 0.6.1)
+      actionpack (>= 1.4.0)
+      activerecord (>= 1.6.0)
+      rake (>= 0.4.15)
     rake (12.2.1)
     rdoc (5.1.0)
     rest-client (1.6.8)
@@ -89,6 +97,7 @@ DEPENDENCIES
   heroku (~> 3.99, >= 3.99.1)
   pg (~> 0.21.0)
   pry-byebug (~> 3.5)
+  rails
   rake (~> 12.2, >= 12.2.1)
   sinatra (~> 1.4, >= 1.4.7)
   sinatra-activerecord (~> 2.0, >= 2.0.13)
