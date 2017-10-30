@@ -71,7 +71,3 @@ user2 = User.new({
   "password" => "a"
   })
 user2.save()
-
-
-binding.pry
-nil
